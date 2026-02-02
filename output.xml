@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-23T14:42:01.166664" rpa="false" schemaversion="5">
+<suite id="s1" name="Automation Website Practice2" source="C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\automation_website_practice2.robot">
+<test id="s1-t1" name="Test List" line="57">
+<kw name="Open App In Browser" owner="keyword_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-23T14:42:01.728331" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>https://testautomationpractice.blogspot.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-23T14:42:01.728132" elapsed="8.201538"/>
+</kw>
+<status status="PASS" start="2026-01-23T14:42:01.727477" elapsed="8.202342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${color_list}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-23T14:42:09.930260" elapsed="0.041256"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-01-23T14:42:09.972294" level="INFO">Selecting options from selection list '//select[@id="colors"]' by label White.</msg>
+<arg>${color_list}</arg>
+<arg>${color_1}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-01-23T14:42:09.972050" elapsed="0.124783"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-01-23T14:42:10.097626" level="INFO">Selecting options from selection list '//select[@id="colors"]' by label Blue.</msg>
+<arg>${color_list}</arg>
+<arg>${color_2}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.097282" elapsed="0.112876"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-01-23T14:42:10.210822" level="INFO">Selecting options from selection list '//select[@id="colors"]' by label Yellow.</msg>
+<arg>${color_list}</arg>
+<arg>${color_3}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.210572" elapsed="0.107357"/>
+</kw>
+<kw name="Get Sorted List" owner="utils">
+<msg time="2026-01-23T14:42:10.318642" level="INFO">${sorted_list} = ['Blue', 'White', 'Yellow']</msg>
+<var>${sorted_list}</var>
+<arg>${color_1}</arg>
+<arg>${color_2}</arg>
+<arg>${color_3}</arg>
+<status status="PASS" start="2026-01-23T14:42:10.318333" elapsed="0.000343"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${sorted_list}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.319163" elapsed="0.000499"/>
+</kw>
+<kw name="Verify Selection Of List" owner="keyword_resource">
+<kw name="Get Selected List Labels" owner="SeleniumLibrary">
+<msg time="2026-01-23T14:42:10.455839" level="INFO">${selected_options} = ['Blue', 'Yellow', 'White']</msg>
+<var>${selected_options}</var>
+<arg>${list}</arg>
+<doc>Returns labels of selected options from selection list ``locator``.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.320324" elapsed="0.135569"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-23T14:42:10.456490" level="INFO">${expected_options} = ['White', 'Blue', 'Yellow']</msg>
+<var>${expected_options}</var>
+<arg>${label_1}</arg>
+<arg>${label_2}</arg>
+<arg>${label_3}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.456098" elapsed="0.000419"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${selected_options}</arg>
+<arg>${expected_options}</arg>
+<arg>ignore_order=${TRUE}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.456637" elapsed="0.000343"/>
+</kw>
+<arg>${color_list}</arg>
+<arg>${color_1}</arg>
+<arg>${color_2}</arg>
+<arg>${color_3}</arg>
+<status status="PASS" start="2026-01-23T14:42:10.319991" elapsed="0.137056"/>
+</kw>
+<kw name="Close App In Browser" owner="keyword_resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-23T14:42:10.458107" elapsed="2.264296"/>
+</kw>
+<status status="PASS" start="2026-01-23T14:42:10.457856" elapsed="2.264674"/>
+</kw>
+<status status="PASS" start="2026-01-23T14:42:01.726403" elapsed="10.996774"/>
+</test>
+<status status="PASS" start="2026-01-23T14:42:01.169285" elapsed="11.555174"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Automation Website Practice2" id="s1" pass="1" fail="0" skip="0">Automation Website Practice2</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-23T14:42:01.719240" level="ERROR">Error in file 'C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\keyword_resource.resource' on line 2: Importing library 'Selenium' failed: ModuleNotFoundError: No module named 'Selenium'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\virtual_env\Scripts\robot.exe
+  C:\Program Files\Python314\python314.zip
+  C:\Program Files\Python314\DLLs
+  C:\Program Files\Python314\Lib
+  C:\Program Files\Python314
+  C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\virtual_env
+  C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\virtual_env\Lib\site-packages</msg>
+</errors>
+</robot>

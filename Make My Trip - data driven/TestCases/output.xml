@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-30T10:15:39.185404" rpa="false" schemaversion="5">
+<suite id="s1" name="Buses Testcases" source="C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\Make My Trip\TestCases\buses_testcases.robot">
+<test id="s1-t1" name="Test Template For Buses Module Flow" line="19">
+<kw name="Open Website In Browser And Close Popup" owner="keywords" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-30T10:15:40.967284" elapsed="0.000223"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:15:40.967815" level="INFO">Opening browser 'Chrome' to base url 'https://www.makemytrip.com/'.</msg>
+<arg>${website_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T10:15:40.967650" elapsed="5.163477"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T10:15:46.131639" elapsed="0.491015"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T10:15:46.637854" elapsed="0.587244"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:15:47.226298" level="INFO">Clicking element '//span[@data-cy="closeModal"]'.</msg>
+<arg>${popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:15:47.225625" elapsed="0.714049"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T10:15:47.940442" elapsed="0.926379"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:15:48.868132" level="INFO">Clicking element '//img[contains(@src,'close-icon.png')]//parent::div'.</msg>
+<arg>${robot_popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:15:48.867354" elapsed="0.642106"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-01-30T10:15:49.510174" elapsed="0.219315"/>
+</kw>
+<status status="PASS" start="2026-01-30T10:15:40.966563" elapsed="8.763192"/>
+</kw>
+<kw name="Test Template For Buses Module Flow">
+<kw name="Fetch Testdata By Id" owner="utils">
+<msg time="2026-01-30T10:15:49.783797" level="INFO">&amp;{data} = { TC_ID=id_1 | from=Mumbai | to=Delhi }</msg>
+<var>&amp;{data}</var>
+<arg>${testDataPath}${/}buses_module_testdata.xlsx</arg>
+<arg>${sheet_name}</arg>
+<arg>${TC_ID}</arg>
+<status status="PASS" start="2026-01-30T10:15:49.731610" elapsed="0.052279"/>
+</kw>
+<kw name="Click On Buses Icon" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:00.423846" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-280.png"&gt;&lt;img src="selenium-screenshot-280.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-30T10:16:00.424358" level="FAIL">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</msg>
+<arg>${bus_icon}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-30T10:15:49.785068" elapsed="10.649758">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${bus_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.435544" elapsed="0.000156"/>
+</kw>
+<doc>Clicks on buses icon</doc>
+<status status="FAIL" start="2026-01-30T10:15:49.784196" elapsed="10.652018">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Verification Of Redirection To Buses Module" owner="keywords">
+<doc>Verifies whether user redirect to buses module after clicking bus icon</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.436902" elapsed="0.000119"/>
+</kw>
+<kw name="Select From City" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.437531" elapsed="0.000074"/>
+</kw>
+<kw name="Select To City" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.437938" elapsed="0.000091"/>
+</kw>
+<kw name="Verification For Cities Selection" owner="keywords">
+<var>${status}</var>
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.438375" elapsed="0.000046"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Same cities are selected!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.438770" elapsed="0.000044"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T10:16:00.438570" elapsed="0.000303"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${current_date}</var>
+<arg>${travel_date}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.439118" elapsed="0.000045"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Date is ${current_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.439314" elapsed="0.000034"/>
+</kw>
+<kw name="Get Random Date" owner="utils">
+<var>${date}</var>
+<arg>${current_date}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.439498" elapsed="0.000075"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.439773" elapsed="0.000071"/>
+</kw>
+<kw name="Select Travel Date" owner="keywords">
+<arg>${date}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.440822" elapsed="0.000133"/>
+</kw>
+<kw name="Verification of Travel Date" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:00.441470" elapsed="0.000103"/>
+</kw>
+<kw name="Click Search Button" owner="keywords">
+<status status="NOT RUN" start="2026-01-30T10:16:00.442020" elapsed="0.000080"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.442284" elapsed="0.000043"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Verification Of Details After Redirection To Next Page</arg>
+<arg>${data}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:00.442644" elapsed="0.000056"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T10:16:00.438945" elapsed="0.003859"/>
+</branch>
+<status status="NOT RUN" start="2026-01-30T10:16:00.438522" elapsed="0.004397"/>
+</if>
+<arg>TC_ID=id_1</arg>
+<status status="FAIL" start="2026-01-30T10:15:49.730881" elapsed="10.712302">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T10:16:00.444191" elapsed="2.497662"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:15:40.964364" elapsed="21.977957">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t2" name="Test Template For Buses Module Flow" line="19">
+<kw name="Open Website In Browser And Close Popup" owner="keywords" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-30T10:16:02.946903" elapsed="0.000300"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:02.947572" level="INFO">Opening browser 'Chrome' to base url 'https://www.makemytrip.com/'.</msg>
+<arg>${website_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T10:16:02.947373" elapsed="3.510611"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T10:16:06.458399" elapsed="0.475466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T10:16:06.934542" elapsed="0.468693"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:07.404741" level="INFO">Clicking element '//span[@data-cy="closeModal"]'.</msg>
+<arg>${popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:16:07.403985" elapsed="0.716379"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T10:16:08.121036" elapsed="0.855079"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:08.978289" level="INFO">Clicking element '//img[contains(@src,'close-icon.png')]//parent::div'.</msg>
+<arg>${robot_popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:16:08.976421" elapsed="0.526700"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-01-30T10:16:09.503819" elapsed="0.216002"/>
+</kw>
+<status status="PASS" start="2026-01-30T10:16:02.946380" elapsed="6.773985"/>
+</kw>
+<kw name="Test Template For Buses Module Flow">
+<kw name="Fetch Testdata By Id" owner="utils">
+<msg time="2026-01-30T10:16:09.770001" level="INFO">&amp;{data} = { TC_ID=id_2 | from=Delhi | to=Delhi }</msg>
+<var>&amp;{data}</var>
+<arg>${testDataPath}${/}buses_module_testdata.xlsx</arg>
+<arg>${sheet_name}</arg>
+<arg>${TC_ID}</arg>
+<status status="PASS" start="2026-01-30T10:16:09.723216" elapsed="0.046906"/>
+</kw>
+<kw name="Click On Buses Icon" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:20.289413" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-281.png"&gt;&lt;img src="selenium-screenshot-281.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-30T10:16:20.289754" level="FAIL">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</msg>
+<arg>${bus_icon}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-30T10:16:09.771750" elapsed="10.522228">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${bus_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.294554" elapsed="0.000188"/>
+</kw>
+<doc>Clicks on buses icon</doc>
+<status status="FAIL" start="2026-01-30T10:16:09.770608" elapsed="10.524482">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Verification Of Redirection To Buses Module" owner="keywords">
+<doc>Verifies whether user redirect to buses module after clicking bus icon</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.295798" elapsed="0.000143"/>
+</kw>
+<kw name="Select From City" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.296497" elapsed="0.000111"/>
+</kw>
+<kw name="Select To City" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.297032" elapsed="0.000101"/>
+</kw>
+<kw name="Verification For Cities Selection" owner="keywords">
+<var>${status}</var>
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.297725" elapsed="0.000083"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Same cities are selected!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.298364" elapsed="0.000083"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T10:16:20.298047" elapsed="0.000512"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${current_date}</var>
+<arg>${travel_date}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.298937" elapsed="0.000074"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Date is ${current_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.299280" elapsed="0.000069"/>
+</kw>
+<kw name="Get Random Date" owner="utils">
+<var>${date}</var>
+<arg>${current_date}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.299601" elapsed="0.000088"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.299926" elapsed="0.000065"/>
+</kw>
+<kw name="Select Travel Date" owner="keywords">
+<arg>${date}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.300579" elapsed="0.000079"/>
+</kw>
+<kw name="Verification of Travel Date" owner="keywords">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2026-01-30T10:16:20.300954" elapsed="0.000069"/>
+</kw>
+<kw name="Click Search Button" owner="keywords">
+<status status="NOT RUN" start="2026-01-30T10:16:20.301292" elapsed="0.000073"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.301596" elapsed="0.000068"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Verification Of Details After Redirection To Next Page</arg>
+<arg>${data}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:20.301997" elapsed="0.000072"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T10:16:20.298677" elapsed="0.003515"/>
+</branch>
+<status status="NOT RUN" start="2026-01-30T10:16:20.297977" elapsed="0.004318"/>
+</if>
+<arg>TC_ID=id_2</arg>
+<status status="FAIL" start="2026-01-30T10:16:09.721989" elapsed="10.580571">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T10:16:20.303746" elapsed="2.531451"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:16:02.943468" elapsed="19.892130">Element '//a[@href="/bus-tickets/"]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t3" name="Test Template For Buses Module Flow" line="19">
+<kw name="Open Website In Browser And Close Popup" owner="keywords" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-30T10:16:22.841932" elapsed="0.000359"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:22.843183" level="INFO">Opening browser 'Chrome' to base url 'https://www.makemytrip.com/'.</msg>
+<arg>${website_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T10:16:22.842686" elapsed="3.541302"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T10:16:26.384334" elapsed="0.433069"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T10:16:26.817703" elapsed="0.485226"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:27.303988" level="INFO">Clicking element '//span[@data-cy="closeModal"]'.</msg>
+<arg>${popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:16:27.303414" elapsed="0.665766"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:28.647283" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff711830ea6
+	0x7ff71187bca6
+	0x7ff7118b5942
+	0x7ff7118afd66
+	0x7ff7118aecc1
+	0x7ff7117f99e5
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff7117f87aa
+	0x7ff711ecf448
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</msg>
+<msg time="2026-01-30T10:16:28.647837" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=144.0.7559.109); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff7118310bd
+	0x7ff71181c642
+	0x7ff7118429db
+	0x7ff7118bd690
+	0x7ff7118d9822
+	0x7ff71187cc9c
+	0x7ff71187dbe3
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff711a93844
+	0x7ff711a939f6
+	0x7ff711a79a07
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</msg>
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-30T10:16:27.969851" elapsed="0.686202">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=144.0.7559.109); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff7118310bd
+	0x7ff71181c642
+	0x7ff7118429db
+	0x7ff7118bd690
+	0x7ff7118d9822
+	0x7ff71187cc9c
+	0x7ff71187dbe3
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff711a93844
+	0x7ff711a939f6
+	0x7ff711a79a07
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:28.656259" elapsed="0.000035"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:28.656385" elapsed="0.000022"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:16:22.841222" elapsed="5.815289">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=144.0.7559.109); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff7118310bd
+	0x7ff71181c642
+	0x7ff7118429db
+	0x7ff7118bd690
+	0x7ff7118d9822
+	0x7ff71187cc9c
+	0x7ff71187dbe3
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff711a93844
+	0x7ff711a939f6
+	0x7ff711a79a07
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T10:16:28.657061" elapsed="2.260750"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:16:22.836931" elapsed="8.081348">Setup failed:
+InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=144.0.7559.109); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff7118310bd
+	0x7ff71181c642
+	0x7ff7118429db
+	0x7ff7118bd690
+	0x7ff7118d9822
+	0x7ff71187cc9c
+	0x7ff71187dbe3
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff711a93844
+	0x7ff711a939f6
+	0x7ff711a79a07
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</status>
+</test>
+<test id="s1-t4" name="Test Template For Buses Module Flow" line="19">
+<kw name="Open Website In Browser And Close Popup" owner="keywords" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-30T10:16:30.922042" elapsed="0.000323"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:16:30.923437" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<arg>${website_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-01-30T10:16:30.922739" elapsed="0.000812">Execution terminated by signal</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.923797" elapsed="0.000040"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.923933" elapsed="0.000022"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.924031" elapsed="0.000020"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.924123" elapsed="0.000020"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.924221" elapsed="0.000021"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" start="2026-01-30T10:16:30.924322" elapsed="0.000020"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:16:30.921568" elapsed="0.002941">Execution terminated by signal</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T10:16:30.925001" elapsed="0.000162"/>
+</kw>
+<status status="FAIL" start="2026-01-30T10:16:30.919209" elapsed="0.006196">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t5" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.926370" elapsed="0.002056">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.928977" elapsed="0.001872">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.931520" elapsed="0.001830">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.933958" elapsed="0.001715">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.936599" elapsed="0.001285">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="Test Template For Buses Module Flow" line="19">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2026-01-30T10:16:30.938469" elapsed="0.001255">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2026-01-30T10:15:39.188253" elapsed="51.752222"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat info="combined" combined="NOT robot:exit" pass="0" fail="4" skip="0">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat name="Buses Testcases" id="s1" pass="0" fail="10" skip="0">Buses Testcases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-30T10:16:02.943735" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:22.837041" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:28.647283" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff711a8a535
+	0x7ff711a8a590
+	0x7ff711830ea6
+	0x7ff71187bca6
+	0x7ff7118b5942
+	0x7ff7118afd66
+	0x7ff7118aecc1
+	0x7ff7117f99e5
+	0x7ff711d67b60
+	0x7ff711d61f5d
+	0x7ff711d8311a
+	0x7ff711aa60a5
+	0x7ff711aae73c
+	0x7ff7117f87aa
+	0x7ff711ecf448
+	0x7fff52f9e8d7
+	0x7fff5378c53c
+</msg>
+<msg time="2026-01-30T10:16:30.919265" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.926418" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.929015" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.931576" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.934022" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.936640" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+<msg time="2026-01-30T10:16:30.938516" level="WARN">Multiple tests with name 'Test Template For Buses Module Flow' executed in suite 'Buses Testcases'.</msg>
+</errors>
+</robot>

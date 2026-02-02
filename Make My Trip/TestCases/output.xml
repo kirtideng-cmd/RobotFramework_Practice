@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-02T13:03:34.168394" rpa="false" schemaversion="5">
+<suite id="s1" name="Buses Testcases" source="C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\Make My Trip\TestCases\buses_testcases.robot">
+<test id="s1-t1" name="Test For Buses Module Flow" line="17">
+<kw name="Open Website In Browser" owner="busmodule_keywords" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-02-02T13:03:34.693898" elapsed="0.000206"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:34.694398" level="INFO">Opening browser 'Chrome' to base url 'https://www.makemytrip.com/'.</msg>
+<arg>${website_url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T13:03:34.694239" elapsed="3.780815"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T13:03:38.475390" elapsed="0.402350"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:03:34.693243" elapsed="4.185306"/>
+</kw>
+<kw name="Fetch Testdata By Id" owner="utils">
+<msg time="2026-02-02T13:03:38.920466" level="INFO">&amp;{data} = { ${TC_ID}=id_1 | from=Mumbai | to=Delhi | None=None }</msg>
+<var>&amp;{data}</var>
+<arg>${testDataPath}</arg>
+<arg>${id}</arg>
+<status status="PASS" start="2026-02-02T13:03:38.879228" elapsed="0.041427"/>
+</kw>
+<kw name="Close Popup" owner="busmodule_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:38.924318" elapsed="0.519616"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:39.445592" level="INFO">Clicking element '//span[@data-cy="closeModal"]'.</msg>
+<arg>${popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:39.444644" elapsed="0.639074"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:40.084153" elapsed="1.307847"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:41.393375" level="INFO">Clicking element '//img[contains(@src,'close-icon.png')]//parent::div'.</msg>
+<arg>${robot_popup_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:41.392630" elapsed="0.610303"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>${robot_popup_close}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" start="2026-02-02T13:03:42.004192" elapsed="0.222521"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:03:38.922908" elapsed="3.304119"/>
+</kw>
+<kw name="Click On Buses Icon" owner="busmodule_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${bus_icon}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:42.228617" elapsed="0.479427"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:42.709036" level="INFO">Clicking element '//a[contains(@href,"/bus-tickets/")]'.</msg>
+<arg>${bus_icon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:42.708509" elapsed="0.555832"/>
+</kw>
+<doc>Clicks on buses icon</doc>
+<status status="PASS" start="2026-02-02T13:03:42.227958" elapsed="1.036927"/>
+</kw>
+<kw name="Verification Of Redirection To Buses Module" owner="busmodule_keywords">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:43.487557" level="INFO">Current location is 'https://www.makemytrip.com/bus-tickets/'.</msg>
+<arg>${buses_module_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-02-02T13:03:43.266938" elapsed="0.220880"/>
+</kw>
+<doc>Verifies whether user redirect to buses module after clicking bus icon</doc>
+<status status="PASS" start="2026-02-02T13:03:43.265962" elapsed="0.222091"/>
+</kw>
+<kw name="Select From City" owner="busmodule_keywords">
+<kw name="Replace String" owner="String">
+<msg time="2026-02-02T13:03:43.492234" level="INFO">${input} = //input[@id="fromCity"]</msg>
+<var>${input}</var>
+<arg>${input_tags}</arg>
+<arg>replace</arg>
+<arg>${tag_id[0]}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-02T13:03:43.489964" elapsed="0.002368"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:43.492824" elapsed="0.447878"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:43.941683" level="INFO">Clicking element '//input[@id="fromCity"]'.</msg>
+<arg>${input}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:43.941155" elapsed="0.568788"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${fromCity_input}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:44.510618" elapsed="0.865116"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:45.377401" level="INFO">Sending key(s) ('Mumbai',) to //input[@placeholder='From'] element.</msg>
+<msg time="2026-02-02T13:03:46.092402" level="INFO">Sending keys Mumbai</msg>
+<arg>${fromCity_input}</arg>
+<arg>${data}[from]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:45.376313" elapsed="1.029861"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:46.407548" level="INFO">Sending key(s) ('ARROW_DOWN',) to //input[@placeholder='From'] element.</msg>
+<msg time="2026-02-02T13:03:47.132425" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg time="2026-02-02T13:03:47.132620" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>${fromCity_input}</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:46.406620" elapsed="0.956635"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:47.364641" level="INFO">Sending key(s) ('ENTER',) to //input[@placeholder='From'] element.</msg>
+<msg time="2026-02-02T13:03:48.074578" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-02-02T13:03:48.074765" level="INFO">Releasing special key ENTER.</msg>
+<arg>${fromCity_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:47.363704" elapsed="0.952568"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2026-02-02T13:03:43.489036" elapsed="4.827663"/>
+</kw>
+<kw name="Select To City" owner="busmodule_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${toCity_input}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:48.318512" elapsed="0.439813"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:48.759166" level="INFO">Sending key(s) ('Delhi',) to //input[@placeholder='To'] element.</msg>
+<msg time="2026-02-02T13:03:49.460526" level="INFO">Sending keys Delhi</msg>
+<arg>${toCity_input}</arg>
+<arg>${data}[to]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:48.758600" elapsed="1.008169"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:49.767665" level="INFO">Sending key(s) ('ARROW_DOWN',) to //input[@placeholder='To'] element.</msg>
+<msg time="2026-02-02T13:03:50.484604" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg time="2026-02-02T13:03:50.484729" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>${toCity_input}</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:49.767057" elapsed="0.928624"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:50.696561" level="INFO">Sending key(s) ('ENTER',) to //input[@placeholder='To'] element.</msg>
+<msg time="2026-02-02T13:03:51.383538" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2026-02-02T13:03:51.383713" level="INFO">Releasing special key ENTER.</msg>
+<arg>${toCity_input}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-02-02T13:03:50.695988" elapsed="0.946752"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2026-02-02T13:03:48.317587" elapsed="3.325461"/>
+</kw>
+<kw name="Verification For Cities Selection" owner="busmodule_keywords">
+<kw name="Replace String" owner="String">
+<msg time="2026-02-02T13:03:51.647447" level="INFO">${path} = //input[@id="fromCity"]</msg>
+<var>${path}</var>
+<arg>${input_tags}</arg>
+<arg>replace</arg>
+<arg>${tag_id[0]}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-02T13:03:51.645083" elapsed="0.002461"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:52.087130" level="INFO">${from_value} = Mumbai, Maharashtra</msg>
+<var>${from_value}</var>
+<arg>${path}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:51.647959" elapsed="0.439284"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-02-02T13:03:52.089491" level="INFO">${path} = //input[@id="toCity"]</msg>
+<var>${path}</var>
+<arg>${input_tags}</arg>
+<arg>replace</arg>
+<arg>${tag_id[1]}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.087620" elapsed="0.001952"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:52.527729" level="INFO">${to_value} = Delhi</msg>
+<var>${to_value}</var>
+<arg>${path}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.089884" elapsed="0.438126"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2026-02-02T13:03:52.532715" level="FAIL">Mumbai, Maharashtra != Delhi</msg>
+<arg>${from_value}</arg>
+<arg>${to_value}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2026-02-02T13:03:52.531483" elapsed="0.001636">Mumbai, Maharashtra != Delhi</status>
+</kw>
+<msg time="2026-02-02T13:03:52.533485" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Should Be Equal</arg>
+<arg>${from_value}</arg>
+<arg>${to_value}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.528975" elapsed="0.004589"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${same_city_error_msg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:52.534306" elapsed="0.000078"/>
+</kw>
+<return>
+<value>False</value>
+<status status="NOT RUN" start="2026-02-02T13:03:52.534545" elapsed="0.000083"/>
+</return>
+<status status="NOT RUN" start="2026-02-02T13:03:52.533849" elapsed="0.000896"/>
+</branch>
+<branch type="ELSE">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${to_value}</arg>
+<arg>${data}[to]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.535126" elapsed="0.001761"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${from_value}</arg>
+<arg>${data}[from]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.537253" elapsed="0.001361"/>
+</kw>
+<return>
+<value>True</value>
+<status status="PASS" start="2026-02-02T13:03:52.538940" elapsed="0.000156"/>
+</return>
+<status status="PASS" start="2026-02-02T13:03:52.534852" elapsed="0.004562"/>
+</branch>
+<status status="PASS" start="2026-02-02T13:03:52.533769" elapsed="0.005799"/>
+</if>
+<msg time="2026-02-02T13:03:52.539914" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>${data}</arg>
+<status status="PASS" start="2026-02-02T13:03:51.644257" elapsed="0.895744"/>
+</kw>
+<kw name="Validate Cities And Proceed With Travel Date" owner="busmodule_keywords">
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Same cities are selected!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:52.542224" elapsed="0.000080"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T13:03:52.541680" elapsed="0.000738"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:52.991931" level="INFO">${current_date} = 3 Feb26</msg>
+<var>${current_date}</var>
+<arg>${travel_date}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.542780" elapsed="0.449286"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Current Date is ${current_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:03:52.992506" elapsed="0.001326"/>
+</kw>
+<kw name="Get Random Date" owner="utils">
+<msg time="2026-02-02T13:03:53.022408" level="INFO">${date} = Apr 26 2026</msg>
+<var>${date}</var>
+<arg>${current_date}</arg>
+<status status="PASS" start="2026-02-02T13:03:52.994256" elapsed="0.028268"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.023012" elapsed="0.000963"/>
+</kw>
+<kw name="Select Travel Date" owner="busmodule_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Date format:${date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.025431" elapsed="0.001160"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${travel_date}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.026969" elapsed="0.445509"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-02-02T13:03:53.473755" level="INFO">${element_date} = //div[contains(@aria-label, "Apr 26 2026")]</msg>
+<var>${element_date}</var>
+<arg>${actual_date_element}</arg>
+<arg>date</arg>
+<arg>${date}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.472905" elapsed="0.000962"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:53.475223" level="INFO">Executing JavaScript:
+window.scrollBy(0, 250)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 250)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.474275" elapsed="0.214120"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:53.690434" level="INFO">Executing JavaScript:
+document.querySelector('textarea.tp-dt-enhanced-input-box').style.display='none'
+Without any arguments.</msg>
+<arg>document.querySelector('textarea.tp-dt-enhanced-input-box').style.display='none'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.689500" elapsed="0.219160"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:59.348588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-286.png"&gt;&lt;img src="selenium-screenshot-286.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-02T13:03:59.348925" level="FAIL">Element '//div[contains(@aria-label, "Apr 26 2026")]' not visible after 5 seconds.</msg>
+<arg>${element_date}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-02-02T13:03:53.912234" elapsed="5.443665">Element '//div[contains(@aria-label, "Apr 26 2026")]' not visible after 5 seconds.</status>
+</kw>
+<msg time="2026-02-02T13:03:59.356465" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element_date}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-02T13:03:53.911294" elapsed="5.445284"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${status} and ${element_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:03:59.357136" elapsed="0.001816"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${element_date}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:59.359766" elapsed="0.000085"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:59.360110" elapsed="0.000074"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element_date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:59.360415" elapsed="0.000062"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Date found and clicked!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:59.360733" elapsed="0.000069"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2026-02-02T13:03:59.361066" elapsed="0.000076"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T13:03:59.359279" elapsed="0.001963"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:03:59.362139" level="INFO">Clicking element '//span[@aria-label="Next Month"]'.</msg>
+<arg>${next_month_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:03:59.361581" elapsed="0.510923"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:03:59.361349" elapsed="0.511369"/>
+</branch>
+<status status="PASS" start="2026-02-02T13:03:59.359213" elapsed="0.513620"/>
+</if>
+<var name="${ele}">0</var>
+<status status="PASS" start="2026-02-02T13:03:53.910882" elapsed="5.962030"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element_date}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:03:59.874618" elapsed="0.443891"/>
+</kw>
+<msg time="2026-02-02T13:04:00.319033" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element_date}</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-02-02T13:03:59.873762" elapsed="0.445385"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${status} and ${element_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:04:00.319646" elapsed="0.001911"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${element_date}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-02T13:04:00.322239" elapsed="0.695707"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T13:04:03.020387" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T13:04:01.018628" elapsed="2.002063"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:03.022288" level="INFO">Clicking element '//div[contains(@aria-label, "Apr 26 2026")]'.</msg>
+<arg>${element_date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:03.021295" elapsed="0.488591"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Date found and clicked!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:04:03.510335" elapsed="0.001223"/>
+</kw>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2026-02-02T13:04:03.512484" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2026-02-02T13:04:03.511956" elapsed="0.000702"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:04:00.321861" elapsed="3.190919"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${next_month_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-02T13:04:03.513200" elapsed="0.000072"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T13:04:03.512896" elapsed="0.000482"/>
+</branch>
+<status status="PASS" start="2026-02-02T13:04:00.321804" elapsed="3.191661"/>
+</if>
+<var name="${ele}">1</var>
+<status status="PASS" start="2026-02-02T13:03:59.873450" elapsed="3.640106"/>
+</iter>
+<var>${ele}</var>
+<value>3</value>
+<status status="PASS" start="2026-02-02T13:03:53.909011" elapsed="9.604695"/>
+</for>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:03.514872" level="INFO">Executing JavaScript:
+window.scrollBy(0, -250)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, -250)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-02-02T13:04:03.514005" elapsed="0.217042"/>
+</kw>
+<arg>${date}</arg>
+<status status="PASS" start="2026-02-02T13:03:53.024741" elapsed="10.706588"/>
+</kw>
+<kw name="Verification of Travel Date" owner="busmodule_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:04.175510" level="INFO">${value} = 26 Apr26</msg>
+<var>${value}</var>
+<arg>${travel_date}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:03.732473" elapsed="0.443158"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-02-02T13:04:04.176890" level="INFO">${ui_norm} = 2026-04-26</msg>
+<var>${ui_norm}</var>
+<arg>${value}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>date_format=%d %b%y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.176020" elapsed="0.000947"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-02-02T13:04:04.178855" level="INFO">${excel_norm} = 2026-04-26</msg>
+<var>${excel_norm}</var>
+<arg>${data}[travel_date]</arg>
+<arg>date_format=%b %d %Y</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.177301" elapsed="0.001634"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${ui_norm}</arg>
+<arg>${excel_norm}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.179285" elapsed="0.000842"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verification: Travel Date: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.180422" elapsed="0.001091"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2026-02-02T13:04:03.731762" elapsed="0.450061"/>
+</kw>
+<kw name="Click Search Button" owner="busmodule_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.182829" elapsed="0.435794"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:04.620084" level="INFO">Clicking element '//button[text()="Search"]'.</msg>
+<arg>${search button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:04.619490" elapsed="1.704916"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:04:04.182228" elapsed="2.142597"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${data}</arg>
+<arg>travel_date=${date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-02-02T13:04:06.325334" elapsed="0.001067"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Verification Of Details After Redirection To Next Page" owner="busmodule_keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:06.842807" level="INFO">${from} = Mumbai, Maharashtra</msg>
+<var>${from}</var>
+<arg>${from_city_page_2}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:06.329836" elapsed="0.513084"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:07.357446" level="INFO">${to} = Delhi</msg>
+<var>${to}</var>
+<arg>${to_city_page_2}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:06.843293" elapsed="0.514262"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:07.804285" level="INFO">${departure} = Sun, 26 Apr 2026</msg>
+<var>${departure}</var>
+<arg>${depart_page_2}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:07.357937" elapsed="0.446469"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T13:04:08.248045" level="INFO">${page2_heading} = Mumbai, Maharashtra to Delhi Bus</msg>
+<var>${page2_heading}</var>
+<arg>${heading_page_2}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T13:04:07.804883" elapsed="0.443394"/>
+</kw>
+<kw name="Get Page2 Heading" owner="utils">
+<msg time="2026-02-02T13:04:08.249532" level="INFO">${heading} = Mumbai, Maharashtra to Delhi Bus</msg>
+<var>${heading}</var>
+<arg>${from}</arg>
+<arg>${to}</arg>
+<status status="PASS" start="2026-02-02T13:04:08.248822" elapsed="0.000815"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${page2_heading}</arg>
+<arg>${heading}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.250202" elapsed="0.001244"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${from}</arg>
+<arg>${data}[from]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.251784" elapsed="0.000835"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${to}</arg>
+<arg>${data}[to]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.252933" elapsed="0.000715"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-02-02T13:04:08.255635" level="INFO">${ui_norm} = 2026-04-26</msg>
+<var>${ui_norm}</var>
+<arg>${departure}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>date_format=%a, %d %b %Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.253923" elapsed="0.001804"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2026-02-02T13:04:08.256781" level="INFO">${data_norm} = 2026-04-26</msg>
+<var>${data_norm}</var>
+<arg>${data}[travel_date]</arg>
+<arg>date_format=%b %d %Y</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.256066" elapsed="0.000788"/>
+</kw>
+<arg>${data}</arg>
+<status status="PASS" start="2026-02-02T13:04:06.328657" elapsed="1.928421"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>Verification Of Details After Redirection To Next Page</arg>
+<arg>${data}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-02T13:04:06.326952" elapsed="1.930269"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:03:52.542516" elapsed="15.714825"/>
+</branch>
+<status status="PASS" start="2026-02-02T13:03:52.541623" elapsed="15.715827"/>
+</if>
+<arg>${data}</arg>
+<arg>${status}</arg>
+<status status="PASS" start="2026-02-02T13:03:52.540926" elapsed="15.716643"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T13:04:08.258946" elapsed="2.519841"/>
+</kw>
+<status status="PASS" start="2026-02-02T13:03:34.692400" elapsed="36.086926"/>
+</test>
+<status status="PASS" start="2026-02-02T13:03:34.171911" elapsed="36.609595"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Buses Testcases" id="s1" pass="1" fail="0" skip="0">Buses Testcases</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-02-02T13:03:34.163442" level="ERROR">Error in file 'C:\Users\Kirti.Deng\Desktop\RobotFramework_Practice\Make My Trip\TestCases\buses_testcases.robot' on line 11: Setting 'Test Setup' is allowed only once. Only the first value is used.</msg>
+</errors>
+</robot>
